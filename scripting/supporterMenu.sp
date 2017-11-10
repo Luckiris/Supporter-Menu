@@ -72,17 +72,17 @@ public Action OnRoundEnd(Handle event, const char[] name, bool dontBroadcast)
 				case 1:
 				{
 					PerformMove(moveRoundEndAdmin[i], i, moveRoundEndTarget[i]);
-					ShowActivity2(moveRoundEndAdmin[i], "[SM] ", "Moved %N to Spectators", i);	
+					ShowActivity2(moveRoundEndAdmin[i], "[SM] ", "Moved %N to Spectators.", i);	
 				}
 				case 2:
 				{
 					PerformMove(moveRoundEndAdmin[i], i, moveRoundEndTarget[i]);
-					ShowActivity2(moveRoundEndAdmin[i], "[SM] ", "Moved %N to T", i);	
+					ShowActivity2(moveRoundEndAdmin[i], "[SM] ", "Moved %N to T.", i);	
 				}
 				case 3:
 				{
 					PerformMove(moveRoundEndAdmin[i], i, moveRoundEndTarget[i]);
-					ShowActivity2(moveRoundEndAdmin[i], "[SM] ", "Moved %N to CT", i);	
+					ShowActivity2(moveRoundEndAdmin[i], "[SM] ", "Moved %N to CT.", i);	
 				}					
 			}
 			moveRoundEndTarget[i] = 0;
@@ -103,17 +103,17 @@ public Action OnDeath(Handle event, const char[] name, bool dontBroadcast)
 			case 1:
 			{
 				PerformMove(moveDeathAdmin[client], client, moveDeathTarget[client]);
-				ShowActivity2(moveDeathAdmin[client], "[SM] ", "Moved %N to Spectators", client);	
+				ShowActivity2(moveDeathAdmin[client], "[SM] ", "Moved %N to Spectators.", client);	
 			}
 			case 2:
 			{
 				PerformMove(moveDeathAdmin[client], client, moveDeathTarget[client]);
-				ShowActivity2(moveDeathAdmin[client], "[SM] ", "Moved %N to T", client);			
+				ShowActivity2(moveDeathAdmin[client], "[SM] ", "Moved %N to T.", client);			
 			}
 			case 3:
 			{
 				PerformMove(moveDeathAdmin[client], client, moveDeathTarget[client]);
-				ShowActivity2(moveDeathAdmin[client], "[SM] ", "Moved %N to CT", client);			
+				ShowActivity2(moveDeathAdmin[client], "[SM] ", "Moved %N to CT.", client);			
 			}					
 		}
 		moveDeathAdmin[client] = 0;
@@ -572,15 +572,15 @@ public int MenuHandler_Slay(Menu menu, MenuAction action, int param1, int param2
 
 		if ((target = GetClientOfUserId(userid)) == 0)
 		{
-			PrintToChat(param1, "[SM] %t", "Player no longer available");
+			PrintToChat(param1, "[SM] %t", "Player no longer available.");
 		}
 		else if (!CanUserTarget(param1, target))
 		{
-			PrintToChat(param1, "[SM] %t", "Unable to target");
+			PrintToChat(param1, "[SM] %t", "Unable to target.");
 		}
 		else if (!IsPlayerAlive(target))
 		{
-			ReplyToCommand(param1, "[SM] %t", "Player has since died");
+			ReplyToCommand(param1, "[SM] %t", "Player has since died.");
 		}
 		else
 		{
@@ -614,18 +614,18 @@ public int MenuHandler_Respawn(Menu menu, MenuAction action, int param1, int par
 
 		if ((target = GetClientOfUserId(userid)) == 0)
 		{
-			PrintToChat(param1, "[SM] %t", "Player no longer available");
+			PrintToChat(param1, "[SM] %t", "Player no longer available.");
 		}
 		else if (!CanUserTarget(param1, target))
 		{
-			PrintToChat(param1, "[SM] %t", "Unable to target");
+			PrintToChat(param1, "[SM] %t", "Unable to target.");
 		}
 		else
 		{
 			char name[MAX_NAME_LENGTH];
 			GetClientName(target, name, sizeof(name));
 			PerformRespawn(param1, target);
-			ShowActivity2(param1, "[SM] ", "Respawned %s", name);
+			ShowActivity2(param1, "[SM] ", "Respawned %s.", name);
 		}
 		
 		DisplayRespawnMenu(param1);
@@ -673,15 +673,15 @@ public int MenuHandler_Slap(Menu menu, MenuAction action, int param1, int param2
 
 		if ((target = GetClientOfUserId(userid)) == 0)
 		{
-			PrintToChat(param1, "[SM] %t", "Player no longer available");
+			PrintToChat(param1, "[SM] %t", "Player no longer available.");
 		}
 		else if (!CanUserTarget(param1, target))
 		{
-			PrintToChat(param1, "[SM] %t", "Unable to target");
+			PrintToChat(param1, "[SM] %t", "Unable to target.");
 		}
 		else if (!IsPlayerAlive(target))
 		{
-			ReplyToCommand(param1, "[SM] %t", "Player has since died");
+			ReplyToCommand(param1, "[SM] %t", "Player has since died.");
 		}	
 		else
 		{
@@ -734,7 +734,7 @@ public int MenuHandler_Move(Menu menu, MenuAction action, int param1, int param2
 					}
 				}
 			}	
-			ShowActivity2(param1, "[SM] ", "Moved all players to T");			
+			ShowActivity2(param1, "[SM] ", "Moved all players to T.");			
 		}
 		if (StrEqual(info, "MoveAllCT"))
 		{
@@ -748,7 +748,7 @@ public int MenuHandler_Move(Menu menu, MenuAction action, int param1, int param2
 					}
 				}
 			}	
-			ShowActivity2(param1, "[SM] ", "Moved all players to CT");			
+			ShowActivity2(param1, "[SM] ", "Moved all players to CT.");			
 		}
 		if (StrEqual(info, "MoveAllS"))
 		{
@@ -762,7 +762,7 @@ public int MenuHandler_Move(Menu menu, MenuAction action, int param1, int param2
 					}
 				}
 			}
-			ShowActivity2(param1, "[SM] ", "Moved all players to Spectators");			
+			ShowActivity2(param1, "[SM] ", "Moved all players to Spectators.");			
 		}
 		if (StrEqual(info, "MoveROneT"))
 		{
@@ -811,18 +811,18 @@ public int MenuHandler_MoveT(Menu menu, MenuAction action, int param1, int param
 
 		if ((target = GetClientOfUserId(userid)) == 0)
 		{
-			PrintToChat(param1, "[SM] %t", "Player no longer available");
+			PrintToChat(param1, "[SM] %t", "Player no longer available.");
 		}
 		else if (!CanUserTarget(param1, target))
 		{
-			PrintToChat(param1, "[SM] %t", "Unable to target");
+			PrintToChat(param1, "[SM] %t", "Unable to target.");
 		}
 		else
 		{
 			char name[MAX_NAME_LENGTH];
 			GetClientName(target, name, sizeof(name));
 			PerformMove(param1, target, 2);
-			ShowActivity2(param1, "[SM] ", "Moved %s to T", name);
+			ShowActivity2(param1, "[SM] ", "Moved %s to T.", name);
 		}
 		
 		DisplayMoveTMenu(param1);
@@ -849,18 +849,18 @@ public int MenuHandler_MoveCT(Menu menu, MenuAction action, int param1, int para
 
 		if ((target = GetClientOfUserId(userid)) == 0)
 		{
-			PrintToChat(param1, "[SM] %t", "Player no longer available");
+			PrintToChat(param1, "[SM] %t", "Player no longer available.");
 		}
 		else if (!CanUserTarget(param1, target))
 		{
-			PrintToChat(param1, "[SM] %t", "Unable to target");
+			PrintToChat(param1, "[SM] %t", "Unable to target.");
 		}
 		else
 		{
 			char name[MAX_NAME_LENGTH];
 			GetClientName(target, name, sizeof(name));
 			PerformMove(param1, target, 3);
-			ShowActivity2(param1, "[SM] ", "Moved %s to CT", name);
+			ShowActivity2(param1, "[SM] ", "Moved %s to CT.", name);
 		}
 		
 		DisplayMoveCTMenu(param1);
@@ -887,18 +887,18 @@ public int MenuHandler_MoveS(Menu menu, MenuAction action, int param1, int param
 
 		if ((target = GetClientOfUserId(userid)) == 0)
 		{
-			PrintToChat(param1, "[SM] %t", "Player no longer available");
+			PrintToChat(param1, "[SM] %t", "Player no longer available.");
 		}
 		else if (!CanUserTarget(param1, target))
 		{
-			PrintToChat(param1, "[SM] %t", "Unable to target");
+			PrintToChat(param1, "[SM] %t", "Unable to target.");
 		}
 		else
 		{
 			char name[MAX_NAME_LENGTH];
 			GetClientName(target, name, sizeof(name));
 			PerformMove(param1, target, 1);
-			ShowActivity2(param1, "[SM] ", "Moved %s to Spectators", name);
+			ShowActivity2(param1, "[SM] ", "Moved %s to Spectators.", name);
 		}
 		
 		DisplayMoveSMenu(param1);
@@ -925,11 +925,11 @@ public int MenuHandler_RMoveT(Menu menu, MenuAction action, int param1, int para
 
 		if ((target = GetClientOfUserId(userid)) == 0)
 		{
-			PrintToChat(param1, "[SM] %t", "Player no longer available");
+			PrintToChat(param1, "[SM] %t", "Player no longer available.");
 		}
 		else if (!CanUserTarget(param1, target))
 		{
-			PrintToChat(param1, "[SM] %t", "Unable to target");
+			PrintToChat(param1, "[SM] %t", "Unable to target.");
 		}
 		else
 		{
@@ -937,7 +937,7 @@ public int MenuHandler_RMoveT(Menu menu, MenuAction action, int param1, int para
 			GetClientName(target, name, sizeof(name));
 			moveRoundEndTarget[target] = 2;
 			moveRoundEndAdmin[target] = param1;
-			PrintToChat(param1, "[SM] %N will be moved to T on round end", target);
+			PrintToChat(param1, "[SM] %N will be moved to T on round end.", target);
 		}
 		
 		DisplayRMoveTMenu(param1);
@@ -964,11 +964,11 @@ public int MenuHandler_RMoveCT(Menu menu, MenuAction action, int param1, int par
 
 		if ((target = GetClientOfUserId(userid)) == 0)
 		{
-			PrintToChat(param1, "[SM] %t", "Player no longer available");
+			PrintToChat(param1, "[SM] %t", "Player no longer available.");
 		}
 		else if (!CanUserTarget(param1, target))
 		{
-			PrintToChat(param1, "[SM] %t", "Unable to target");
+			PrintToChat(param1, "[SM] %t", "Unable to target.");
 		}
 		else
 		{
@@ -976,7 +976,7 @@ public int MenuHandler_RMoveCT(Menu menu, MenuAction action, int param1, int par
 			GetClientName(target, name, sizeof(name));
 			moveRoundEndTarget[target] = 3;
 			moveRoundEndAdmin[target] = param1;
-			PrintToChat(param1, "[SM] %N will be moved to CT on round end", target);
+			PrintToChat(param1, "[SM] %N will be moved to CT on round end.", target);
 		}
 		
 		DisplayRMoveCTMenu(param1);
@@ -1003,11 +1003,11 @@ public int MenuHandler_RMoveS(Menu menu, MenuAction action, int param1, int para
 
 		if ((target = GetClientOfUserId(userid)) == 0)
 		{
-			PrintToChat(param1, "[SM] %t", "Player no longer available");
+			PrintToChat(param1, "[SM] %t", "Player no longer available.");
 		}
 		else if (!CanUserTarget(param1, target))
 		{
-			PrintToChat(param1, "[SM] %t", "Unable to target");
+			PrintToChat(param1, "[SM] %t", "Unable to target.");
 		}
 		else
 		{
@@ -1015,7 +1015,7 @@ public int MenuHandler_RMoveS(Menu menu, MenuAction action, int param1, int para
 			GetClientName(target, name, sizeof(name));
 			moveRoundEndTarget[target] = 1;
 			moveRoundEndAdmin[target] = param1;
-			PrintToChat(param1, "[SM] %N will be moved to Spectators on round end", target);			
+			PrintToChat(param1, "[SM] %N will be moved to Spectators on round end.", target);			
 		}
 		
 		DisplayRMoveSMenu(param1);
@@ -1042,11 +1042,11 @@ public int MenuHandler_DMoveT(Menu menu, MenuAction action, int param1, int para
 
 		if ((target = GetClientOfUserId(userid)) == 0)
 		{
-			PrintToChat(param1, "[SM] %t", "Player no longer available");
+			PrintToChat(param1, "[SM] %t", "Player no longer available.");
 		}
 		else if (!CanUserTarget(param1, target))
 		{
-			PrintToChat(param1, "[SM] %t", "Unable to target");
+			PrintToChat(param1, "[SM] %t", "Unable to target.");
 		}
 		else
 		{
@@ -1054,7 +1054,7 @@ public int MenuHandler_DMoveT(Menu menu, MenuAction action, int param1, int para
 			GetClientName(target, name, sizeof(name));
 			moveDeathTarget[target] = 2;
 			moveDeathAdmin[target] = param1;
-			PrintToChat(param1, "[SM] %N will be moved to T on player death", target);			
+			PrintToChat(param1, "[SM] %N will be moved to T on player death.", target);			
 		}
 		
 		DisplayDMoveTMenu(param1);
@@ -1081,11 +1081,11 @@ public int MenuHandler_DMoveCT(Menu menu, MenuAction action, int param1, int par
 
 		if ((target = GetClientOfUserId(userid)) == 0)
 		{
-			PrintToChat(param1, "[SM] %t", "Player no longer available");
+			PrintToChat(param1, "[SM] %t", "Player no longer available.");
 		}
 		else if (!CanUserTarget(param1, target))
 		{
-			PrintToChat(param1, "[SM] %t", "Unable to target");
+			PrintToChat(param1, "[SM] %t", "Unable to target.");
 		}
 		else
 		{
@@ -1093,7 +1093,7 @@ public int MenuHandler_DMoveCT(Menu menu, MenuAction action, int param1, int par
 			GetClientName(target, name, sizeof(name));
 			moveDeathTarget[target] = 3;
 			moveDeathAdmin[target] = param1;
-			PrintToChat(param1, "[SM] %N will be moved to CT on player death", target);
+			PrintToChat(param1, "[SM] %N will be moved to CT on player death.", target);
 		}
 		
 		DisplayDMoveCTMenu(param1);
@@ -1120,11 +1120,11 @@ public int MenuHandler_DMoveS(Menu menu, MenuAction action, int param1, int para
 
 		if ((target = GetClientOfUserId(userid)) == 0)
 		{
-			PrintToChat(param1, "[SM] %t", "Player no longer available");
+			PrintToChat(param1, "[SM] %t", "Player no longer available.");
 		}
 		else if (!CanUserTarget(param1, target))
 		{
-			PrintToChat(param1, "[SM] %t", "Unable to target");
+			PrintToChat(param1, "[SM] %t", "Unable to target.");
 		}
 		else
 		{
@@ -1132,7 +1132,7 @@ public int MenuHandler_DMoveS(Menu menu, MenuAction action, int param1, int para
 			GetClientName(target, name, sizeof(name));
 			moveDeathTarget[target] = 1;
 			moveDeathAdmin[target] = param1;
-			PrintToChat(param1, "[SM] %N will be moved to Spectators on player death", target);			
+			PrintToChat(param1, "[SM] %N will be moved to Spectators on player death.", target);			
 		}
 		
 		DisplayDMoveSMenu(param1);

@@ -35,6 +35,11 @@ public void OnPluginStart()
 	RegAdminCmd("sm_supporter", CommandSupporter, ADMFLAG_SLAY, "Open the supporter menu");
 	RegAdminCmd("sm_support", CommandSupporter, ADMFLAG_SLAY, "Open the supporter menu");
 	RegAdminCmd("sm_sup", CommandSupporter, ADMFLAG_SLAY, "Open the supporter menu");
+	
+	if (LibraryExists("cstrike"))
+	{
+		isCSGO = true;
+	}
 }
 
 public void OnClientConnected(int client)
